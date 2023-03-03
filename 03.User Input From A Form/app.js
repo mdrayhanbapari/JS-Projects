@@ -10,6 +10,8 @@ submitBtn.addEventListener("click", () => {
     } else {
         namePrint.innerHTML = `Hello <span class="font-medium text-green-500">${name}</span> How are you? Today`;
     }
+
+    nameInput.value = "";
 });
 
 resetbtn.addEventListener("click", () => {
