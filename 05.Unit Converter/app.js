@@ -21,3 +21,5 @@ options.map((option) => {
     const optionElement = `<option value="${option.value}">${option.label}</option>`;
     select.innerHTML += optionElement;
 });
+
+select.value = "Length";
