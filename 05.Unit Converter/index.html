@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Unit Converter</title>
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <section class="grid h-screen place-items-center">
+            <div class="border border-2 border-gray-600 w-8/12 md:w-5/12">
+                <div class="bg-gray-600 text-white text-center p-2">
+                    <h1 class="text-2xl">Unit Converter</h1>
+                </div>
+                <div class="p-4">
+                    <div class="relative inline-block">
+                        <select
+                            id="dynamic-select"
+                            class="appearance-none border border-gray-400 px-2 py-1 pr-[21rem] rounded leading-tight focus:outline-none focus:border-blue-500 bg-gray-800 text-white"
+                        ></select>
+                        <div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none text-white">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path
+                                    d="M14.95 7.95l-3.89 3.88c-.1.1-.25.15-.38.15-.14 0-.28-.05-.38-.15l-3.89-3.88c-.2-.2-.2-.51 0-.71s.51-.2.71 0l3.01 3.01 3.01-3.01c.2-.2.51-.2.71 0 .2.2.2.51 0 .71z"
+                                />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex justify-center mt-4">
+                        <button class="bg-gray-600 text-white p-2 rounded">Convert</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="app.js"></script>
+    </body>
+</html>
