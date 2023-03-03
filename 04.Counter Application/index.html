@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Counter Application</title>
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        <section class="grid h-screen place-items-center">
+            <div class="bg-white shadow-lg sm:rounded-3xl sm:p-20">
+                <div class="max-w-md mx-auto space-y-4">
+                    <div class="text-center">
+                        <h1 class="text-2xl font-semibold">Counter</h1>
+                        <p class="text-red-500 text-sm">**Negative Number are not valid</p>
+                    </div>
+                    <div>
+                        <h2 class="numberValue text-5xl text-center pb-6">00</h2>
+                        <div class="grid grid-cols-4 gap-2">
+                            <input
+                                type="number"
+                                id="decrementValue"
+                                class="border pl-2 rounded-md border-green-500 outline-none"
+                            />
+                            <button class="bg-blue-500 rounded-sm py-1 text-white" id="decrementBtn">Decrement</button>
+                            <button class="bg-blue-500 rounded-sm py-1 text-white" id="incrementBtn">Incremnet</button>
+                            <input
+                                type="number"
+                                id="incrementValue"
+                                class="border pl-2 rounded-md border-green-500 outline-none"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Javascript -->
+        <script src="app.js"></script>
+    </body>
+</html>
