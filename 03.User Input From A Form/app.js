@@ -5,7 +5,11 @@ const namePrint = document.querySelector(".namePrint");
 
 submitBtn.addEventListener("click", () => {
     const name = nameInput.value;
-    namePrint.innerHTML = `Hello <span class="font-medium text-green-500">${name}</span> How are you? Today`;
+    if (!name) {
+        alert("Please enter your name");
+    } else {
+        namePrint.innerHTML = `Hello <span class="font-medium text-green-500">${name}</span> How are you? Today`;
+    }
 });
 
 resetbtn.addEventListener("click", () => {
