@@ -2,9 +2,46 @@
     text-shadow: 2px 2px 2px #CE5937;
 }
 
-/* .color-div {
-    height: 50px;
-    width: 100px;
-    margin: 50px auto;
-    border-radius: 10px;
-} */
+.toast {
+    position: fixed;
+    z-index: 999;
+    top: 2rem;
+    right: 2rem;
+    background-color: #22C55E;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.toast-slide-in {
+    animation: toast-animation-in .5s ease-in;
+}
+
+.toast-slide-out {
+    animation: toast-animation-in .5s ease-out;
+}
+
+@keyframes toast-animation-in {
+    from {
+        transform: translateX(200px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes toast-animation-out {
+    from {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(200px);
+        opacity: 0;
+    }
+}

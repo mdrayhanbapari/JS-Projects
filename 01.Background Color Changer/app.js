@@ -37,8 +37,19 @@ const componentToHex = (c) => {
 const copyColor = (elem, value) => {
 	colorElement = elem.querySelector('h3');
 	navigator.clipboard.writeText(value).then(() => {
-		colorElement.innerText = 'Copied!';
-		colorElement.style.color =  '#22C55E';
+		// colorElement.innerText = 'Copied!';
+		// colorElement.style.color = '#22C55E';
+
+		const toast = document.createElement('div');
+		toast.innerText = 'Copied to clipboard!';
+		toast.className = 'toast toast-slide-in';
+		elem.appendChild(toast);
+		setTimeout(() => {
+			toast.classList.add('toast-slide-out');
+			setTimeout(() => {
+				toast.remove();
+			}, 1000);
+		}, 2000);
 	});
 };
 
