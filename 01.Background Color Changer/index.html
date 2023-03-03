@@ -9,15 +9,23 @@
 		<link rel="stylesheet" href="style.css" />
 		<!-- Tailwind CSS -->
 		<script src="https://cdn.tailwindcss.com"></script>
+		<!-- FontAwesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+		/>
 	</head>
-	<body>
+	<body class="bg-gray-900">
 		<section class="grid h-screen justify-center place-items-center">
 			<div class="text-center space-y-2">
-				<h2
-					class="text-2xl font-medium main-text"
-				>
+				<h2 class="text-2xl font-medium main-text">
 					Background Color Changer
 				</h2>
+				<div class="bg-white w-28 py-2 rounded-md mx-auto hexContainer">
+					<h3 class="text-center cursor-pointer">
+						Click here <i class="fa-solid fa-arrow-down"></i>
+					</h3>
+				</div>
 				<button
 					class="w-32 bg-white tracking-wide text-gray-800 font-bold rounded border-b-2 border-blue-500 hover:border-blue-600 hover:bg-blue-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center transition-all duration-300"
 				>
