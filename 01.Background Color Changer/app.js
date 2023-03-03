@@ -36,9 +36,10 @@ const componentToHex = (c) => {
 
 const copyColor = (elem, value) => {
 	colorElement = elem.querySelector('h3');
-    navigator.clipboard.writeText(value).then(() => {
-        colorElement.innerText = 'Copied!';
-    })
+	navigator.clipboard.writeText(value).then(() => {
+		colorElement.innerText = 'Copied!';
+		colorElement.style.color =  '#22C55E';
+	});
 };
 
 button.addEventListener('click', changeBackgroundColor);
