@@ -1,5 +1,17 @@
 const options = [
     {
+        name: "Area",
+        unit: [
+            { name: "Square meter", value: 1 },
+            { name: "Square centimeter", value: 0.01 },
+            { name: "Square millimeter", value: 0.001 },
+            { name: "Square mile", value: 1609.34 },
+            { name: "Square yard", value: 0.9144 },
+            { name: "Square foot", value: 0.3048 },
+            { name: "Square inch", value: 0.0254 },
+        ],
+    },
+    {
         name: "Length",
         unit: [
             { name: "Kilometer", value: 1000 },
