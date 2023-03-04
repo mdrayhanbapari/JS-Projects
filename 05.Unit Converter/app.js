@@ -91,6 +91,7 @@ options.forEach((category) => {
     dynamicSelect.add(categoryOption);
 });
 
+// Populating the subOption select elements with options
 dynamicSelect.addEventListener("change", () => {
     const selectedOption = dynamicSelect.options[dynamicSelect.selectedIndex].text;
     const matchingCategory = options.find((category) => category.name === selectedOption);
@@ -145,3 +146,4 @@ dynamicSelect.addEventListener("change", () => {
     subSelect1.selectedIndex = 0;
     subSelect2.selectedIndex = 1;
 });
+
