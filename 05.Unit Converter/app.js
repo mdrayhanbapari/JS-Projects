@@ -82,6 +82,9 @@ const input1 = document.querySelector("#input-2");
 const input2 = document.querySelector("#input-1");
 const subSelect1 = document.querySelector("#subSelect-1");
 const subSelect2 = document.querySelector("#subSelect-2");
+const formula = document.querySelector("#formula");
+
+let previousSubOption = null;
 
 // Populating the main select element with options
 options.forEach((category) => {
@@ -112,8 +115,10 @@ dynamicSelect.addEventListener("change", () => {
 
         if (index === 0) {
             subSelect1.selectedIndex = 1;
+            previousSubOption = subOption1;
         } else if (index === 1) {
             subSelect2.selectedIndex = 1;
+            previousSubOption = subOption2;
         }
     });
 
@@ -136,8 +141,10 @@ matchingCategory.unit.forEach((unit, index) => {
 
     if (index === 0) {
         subOption1.selected = true;
+        previousSubOption = subOption1;
     } else if (index === 1) {
         subOption2.selected = true;
+        previousSubOption = subOption2;
     }
 });
 
@@ -145,5 +152,32 @@ matchingCategory.unit.forEach((unit, index) => {
 dynamicSelect.addEventListener("change", () => {
     subSelect1.selectedIndex = 0;
     subSelect2.selectedIndex = 1;
+    previousSubOption = subSelect2.options[1];
 });
 
+// Prevent the user from selecting the same sub-select option in both dropdowns
+subSelect1.addEventListener("change", () => {
+    if (subSelect1.selectedIndex === subSelect2.selectedIndex) {
+        const index = subSelect1.selectedIndex === 0 ? 1 : 0;
+        subSelect2.selectedIndex = index;
+        previousSubOption.selected = false;
+        previousSubOption = subSelect2.options[index];
+        subSelect2.dispatchEvent(new Event("change"));
+    } else {
+        previousSubOption = subSelect1.options[subSelect1.selectedIndex];
+        subSelect2.dispatchEvent(new Event("change"));
+    }
+});
+
+subSelect2.addEventListener("change", () => {
+    if (subSelect2.selectedIndex === subSelect1.selectedIndex) {
+        const index = subSelect2.selectedIndex === 0 ? 1 : 0;
+        subSelect1.selectedIndex = index;
+        previousSubOption.selected = false;
+        previousSubOption = subSelect1.options[index];
+        subSelect1.dispatchEvent(new Event("change"));
+    } else {
+        previousSubOption = subSelect2.options[subSelect2.selectedIndex];
+        subSelect1.dispatchEvent(new Event("change"));
+    }
+});
